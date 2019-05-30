@@ -56,7 +56,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => print('open chats'),
+        onPressed: () => print('open chats test'),
         backgroundColor: Theme.of(context).accentColor,
         child: Icon(Icons.message),
       ),
