@@ -5,7 +5,7 @@ import 'package:what_app/pages/chat_screen.dart';
 import 'package:what_app/pages/status_screen.dart';
 
 class WhatsAppHome extends StatefulWidget {
-  const WhatsAppHome({ Key key }) : super(key: key);
+  const WhatsAppHome({Key key}) : super(key: key);
 
   @override
   _WhatsAppHomeState createState() => _WhatsAppHomeState();
@@ -13,9 +13,8 @@ class WhatsAppHome extends StatefulWidget {
 
 class _WhatsAppHomeState extends State<WhatsAppHome>
     with SingleTickerProviderStateMixin {
-
   final List<Tab> myTabs = <Tab>[
-    Tab(text: 'CAMERA'),
+    Tab(icon: new Icon(Icons.camera_alt)),
     Tab(text: 'CHATS'),
     Tab(text: 'STATUS'),
     Tab(text: 'CALL'),
@@ -39,13 +38,17 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('MyApp'),
-          elevation: 0.7,
-          bottom: TabBar(
-            controller: _tabController,
-            indicatorColor: Colors.white,
-            tabs: myTabs,
-          )),
+        title: Text('MyApp'),
+        elevation: 0.7,
+        bottom: TabBar(
+          controller: _tabController,
+          indicatorColor: Colors.white,
+          tabs: myTabs,
+        ),
+        actions: <Widget>[Icon(Icons.search),Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+        ), Icon(Icons.more_vert)],
+      ),
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
@@ -58,7 +61,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
       floatingActionButton: FloatingActionButton(
         onPressed: () => print('open chats test'),
         backgroundColor: Theme.of(context).accentColor,
-        child: Icon(Icons.message),
+        child: Icon(Icons.message, color: Colors.white),
       ),
     );
   }
